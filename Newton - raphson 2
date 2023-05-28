@@ -1,0 +1,9 @@
+def my_newton(f, df, x0, tol):
+  if abs(f(x0)) < tol:
+    return x0
+  else:
+    return my_newton(f, df, x0 - f(x0)/df(x0), tol)
+
+estimate = my_newton(f, f_prime, 1.5, 1e-6)
+print("estimate = ", estimate)
+print("sqrt(2) = ", np.sqrt(2))
